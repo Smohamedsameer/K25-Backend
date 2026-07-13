@@ -1,0 +1,37 @@
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### VS Code ###
+.vscode/
+
+### Mac ###
+.DS_Store
+
+### Windows ###
+Thumbs.db
+
+### Local uploads — don't commit real user-uploaded screenshots ###
+uploads/
+
+### Never commit real secrets — only application-prod.properties (env-var
+### placeholders, no real values) should be tracked. If you ever create a
+### local file with actual passwords in it, ignore it here too, e.g.:
+# application-secrets.properties
