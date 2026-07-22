@@ -16,11 +16,13 @@ public class CorsConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins(Arrays.stream(allowedOrigins.split(","))
+                .allowedOriginPatterns(Arrays.stream(allowedOrigins.split(","))
                         .map(String::trim)
+                        .filter(s -> !s.isEmpty())
                         .toArray(String[]::new))
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
+                .exposedHeaders("Content-Disposition")
                 .allowCredentials(true); // remove this line if you don't use cookies/withCredentials
     }
 }
